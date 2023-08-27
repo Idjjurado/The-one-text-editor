@@ -21,13 +21,13 @@ module.exports = () => {
       }),
 
       new InjectManifest({
-        swSrc: './src/src-sw.js',
+        swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
 
       new WebpackPwaManifest({
         fingerprints: false,
-        inject: true,
+        // inject: true,
         name: 'The One Text Editor',
         short_name: 'Text Editor',
         description: "This is a simple text editor that allows for the creation and manipulation of text. Also, you are able to use it's full functionality offline as well!",
@@ -37,7 +37,7 @@ module.exports = () => {
         publicPath: './',
         icons: [
           {
-            src: path.resolve('src/images/logo.png'),
+            src: path.resolve('src/images/totelogo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
           },
