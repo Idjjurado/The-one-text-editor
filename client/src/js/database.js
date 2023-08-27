@@ -1,21 +1,36 @@
 import { openDB } from 'idb';
 
 const initdb = async () =>
-  openDB('jate', 1, {
+  openDB('theOneDB', 1, {
     upgrade(db) {
-      if (db.objectStoreNames.contains('jate')) {
-        console.log('jate database already exists');
+      if (db.objectStoreNames.contains('theOneDB')) {
+        console.log('theOneDB database already exists');
         return;
       }
-      db.createObjectStore('jate', { keyPath: 'id', autoIncrement: true });
-      console.log('jate database created');
+      db.createObjectStore('theOneDB', { keyPath: 'id', autoIncrement: true });
+      console.log('theOneDB database created');
     },
   });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
-export const putDb = async (content) => console.error('putDb not implemented');
+export const putDb = async (id, content) => {
+  console.log('PUT to database');
+    const theOnetext = await openDB('theOneDB', 1);
+    const tx = theOnetext.transaction('theOneDB', 'readwrite');
+    const store = tx.objectStore('theOneDB');
+    const request = store.put({ id: id, content: content });
+    const result = await request;
+    console.log('Your words are now written in the stars', result);
+};
 
-// TODO: Add logic for a method that gets all the content from the database
-export const getDb = async () => console.error('getDb not implemented');
+export const getDb = async () => {
+  console.log('GET from database');
+    const theOnetext = await openDB('theOneDB', 1);
+    const tx = theOnetext.transaction('theOneDB', 'readonly');
+    const store = tx.objectStore('theOneDB');
+    const request = store.getAll();
+    const result = await request;
+    console.log('result.value', result);
+    return result;
+};
 
 initdb();
