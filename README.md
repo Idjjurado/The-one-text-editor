@@ -3,7 +3,7 @@
 <p align="center">
   <img src="./imgs/pretending.gif" />
 
-  <h3 align="center">LINK TO DEPLOYED APPLICATION:<h3>
+  <h3 align="center">LINK TO DEPLOYED APPLICATION: https://the-one-text-editor-d57e0a8d0ba0.herokuapp.com/<h3>
 </p>
 
 # Table of Contents
@@ -78,3 +78,13 @@ SO THAT I can reliably retrieve them for later use
   - THEN I should have my static assets pre cached upon loading along with subsequent pages and static assets
 - WHEN I deploy to Heroku
   - THEN I should have proper build scripts for a webpack application
+
+## Examples
+
+Here is an example screenshot of the installed Text editor!
+
+<p align="center">
+  <img src="./imgs/example.png" />
+
+  <h3 align="center">LINK TO DEPLOYED APPLICATION:<h3>
+</p>
