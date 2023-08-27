@@ -27,7 +27,7 @@ module.exports = () => {
 
       new WebpackPwaManifest({
         fingerprints: false,
-        // inject: true,
+        inject: true,
         name: 'The One Text Editor',
         short_name: 'Text Editor',
         description: "This is a simple text editor that allows for the creation and manipulation of text. Also, you are able to use it's full functionality offline as well!",
